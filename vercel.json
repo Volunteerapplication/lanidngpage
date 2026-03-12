@@ -10,9 +10,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/profile/:path*", "destination": "/redirect.html" },
-    { "source": "/post/:path*",    "destination": "/redirect.html" },
-    { "source": "/event/:path*",   "destination": "/redirect.html" },
+    { "source": "/profile/:path*", "destination": "/index.html" },
+    { "source": "/post/:path*",    "destination": "/index.html" },
+    { "source": "/event/:path*",   "destination": "/index.html" },
     { "source": "/((?!.*\\.).*)",  "destination": "/index.html" }
   ]
 }
