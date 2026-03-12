@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Open App</title>
+  <!-- Smart App Banner (iOS) - shows banner linking to the App Store -->
+  <meta name="apple-itunes-app" content="app-id=6751082349">
+  <style>body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;margin:24px;text-align:center;color:#222}a{color:#0070c9}</style>
+</head>
+<body>
+  <h2>Opening app...</h2>
+  <p>If you are not redirected, <a id="storeLink" href="https://apps.apple.com/pk/app/volunteer-take-action/id6751082349">open on the App Store</a>.</p>
+
+  <script>
+    (function(){
+      // Path the user requested (the rewrite preserves the original URL in the address bar)
+      var path = window.location.pathname + window.location.search + window.location.hash;
+
+      // Replace with your app's custom URL scheme if it exists
+      var appScheme = 'voluntr://'+path.replace(/^\//,'');
+      var appStore = 'https://apps.apple.com/pk/app/volunteer-take-action/id6751082349';
+
+      // Try to open via custom scheme first (works for many apps). If it fails, fall back to App Store.
+      var now = Date.now();
+      var timeout = setTimeout(function(){
+        // If still on this page after 1.5s assume app isn't installed and go to store
+        if (Date.now() - now < 2500) window.location = appStore;
+      }, 1500);
+
+      // Attempt to open the app (this will do nothing if scheme not present)
+      window.location = appScheme;
+
+      // As a progressive enhancement, also set the store link for manual use
+      document.getElementById('storeLink').href = appStore;
+    })();
+  </script>
+</body>
+</html>
