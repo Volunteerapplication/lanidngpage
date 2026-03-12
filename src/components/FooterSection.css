@@ -1,0 +1,25 @@
+.footer-heading {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.footer-body {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.footer-section-heading {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-copyright {
+  color: #ffffff;
+  opacity: 0.6;
+}
